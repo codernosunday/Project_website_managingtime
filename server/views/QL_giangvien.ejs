@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrator</title>
+    <title>Quản lý giảng viên</title>
     <link rel="icon" href="LOGO_TIMING_MAIN.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/navbar.css" />
     <link rel="stylesheet" type="text/css" href="/css/css_style_main.css" />
@@ -24,30 +24,24 @@
         </a>
     </div>
     <div class="row">
-        <div class="col-sm-6 p-3 text-white">
+        <div class="col-sm-6 p-3 text-white" style="overflow: auto;height: 250px;">
             <table class="table_css">
                 <tr>
-                    <th>Tên giảng viên</th>
-                    <th>Lớp HP</th>
-                    <th>Tên lớp HP</th>
-                    <th>Sỉ số</th>
-                    <th>Số tiết/tuần</th>
+                    <th>Mã số</th>
+                    <th>Tên GV</th>
                 </tr>
-                <tr>
-                    <td>Võ Thanh Tín</td>
-                    <td>Demo01</td>
-                    <td>2011_demo_(BT)_01</td>
-                    <td>69</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Võ Thanh Tín 2</td>
-                    <td>Demo02</td>
-                    <td>2011_demo_(BT)_02</td>
-                    <td>59</td>
-                    <td>2</td>
-                </tr>
+                <% giangvien.forEach(gv=> { %>
+                    <tr>
+                        <td>
+                            <%= gv.id %>
+                        </td>
+                        <td>
+                            <%= gv.hoten %>
+                        </td>
+                    </tr>
+                    <% }); %>
             </table>
+
         </div>
 
         <div class="col-sm-4 p-4  text-black">

@@ -1,0 +1,44 @@
+/*Table CSS*/
+.table_css {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table_css td,
+.table_css th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table_css tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table_css tr:hover {
+    background-color: #ddd;
+}
+
+.table_css th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #1c00f4;
+    color: white;
+}
+
+/*thẻ Điều hướng trang*/
+#QL_gv:hover {
+    box-shadow: 0 0 10px rgba(231, 230, 230, 0.9);
+    transition: box-shadow 0.3s ease;
+}
+
+#QL_hp:hover {
+    box-shadow: 0 0 10px rgba(88, 88, 88, 0.9);
+    transition: box-shadow 0.3s ease;
+}
+
+#QL_gd:hover {
+    box-shadow: 0 0 10px rgba(18, 68, 234, 0.9);
+    transition: box-shadow 0.3s ease;
+}
