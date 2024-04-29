@@ -24,19 +24,31 @@
         </a>
     </div>
     <div class="row">
-        <div class="col-sm-6 p-3 text-white" style="overflow: auto;height: 250px;">
-            <table class="table_css">
+        <div class="col-sm-8 p-3 text-white" style="overflow: auto;height: 250px;">
+            <table class="table_css" id="giang_vien_table">
                 <tr>
-                    <th>Mã số</th>
-                    <th>Tên GV</th>
+                    <th>ID</th>
+                    <th>Họ tên</th>
+                    <th>Chuyên ngành</th>
+                    <th>Số điện thoại</th>
+                    <th>Email</th>
                 </tr>
                 <% giangvien.forEach(gv=> { %>
                     <tr>
                         <td>
-                            <%= gv.id %>
+                            <%= gv.id%>
                         </td>
                         <td>
                             <%= gv.hoten %>
+                        </td>
+                        <td>
+                            <%= gv.chuyen_nganh%>
+                        </td>
+                        <td>
+                            <%= gv.sdt_gv%>
+                        </td>
+                        <td>
+                            <%= gv.email_gv%>
                         </td>
                     </tr>
                     <% }); %>
@@ -44,24 +56,35 @@
 
         </div>
 
-        <div class="col-sm-4 p-4  text-black">
-            <form action="/action_page.php">
+        <div class="col-sm-4 p-4  bg-dark text-white ">
+
+            <form id="form_gv">
                 <fieldset>
-                    <legend>Personalia:</legend>
-                    <label for="fname">First name:</label>
-                    <input type="text" id="fname" name="fname"><br><br>
-                    <label for="lname">Last name:</label>
-                    <input type="text" id="lname" name="lname"><br><br>
-                    <label for="email">Email:</label>
+                    <legend id="id_gv">Personal information</legend>
+                    <label for="id">ID giảng viên:</label>
+                    <input type="text" id="id_giangvien" name="id"><br><br>
+                    <label for="fname">Họ tên giảng viên:</label>
+                    <input type="text" id="htgv" name="fname"><br><br>
+                    <label for="lname">Chuyên ngành: </label>
+                    <input type="text" id="chnganh" name="lname"><br><br>
+                    <label for="email">Số điện thoại:</label>
+                    <input type="number" id="sdt" name="sdt"><br><br>
+                    <label for="email">email:</label>
                     <input type="email" id="email" name="email"><br><br>
-                    <label for="birthday">Birthday:</label>
-                    <input type="date" id="birthday" name="birthday"><br><br>
-                    <input type="submit" value="Submit">
+                    <button id="button_update" type="button" onclick="serverdata()">Lưu</button>
+                    <button id="button_delete" type="button" onclick="delete_data()">Xoá</button>
                 </fieldset>
             </form>
+            <div class="form-check form-switch">
+                <label for="enableForm">Chế độ chỉnh sửa</label>
+                <input type="checkbox" class="form-check-input" role="switch" id="enableForm">
+            </div>
+
         </div>
     </div>
 </body>
 <script src="/script/navbar_script.js"></script>
+<script src="/script/main_script.js"></script>
+<script src="/script/funtion.js"></script>
 
 </html>

@@ -42,3 +42,26 @@
     box-shadow: 0 0 10px rgba(18, 68, 234, 0.9);
     transition: box-shadow 0.3s ease;
 }
+
+/*btn exel tool page*/
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 5px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+}
+
+.iframe_class {
+    border-radius: 10px;
+}
+
+.btn-custom {
+    margin: 5px 5px;
+    margin-right: 0px;
+}
+
+.button_div {
+    margin: 5px 5px;
+}
