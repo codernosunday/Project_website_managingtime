@@ -3,11 +3,14 @@
 <head>
     <link rel="icon" href="LOGO_TIMING_MAIN.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="./css/navbar.css" />
+    <link rel="stylesheet" type="text/css" href="./css/css_homepage.css" />
+    <link rel="stylesheet" type="text/css" href="/css/css_style_main.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <title>Timing</title>
 </head>
 
@@ -18,27 +21,41 @@
     </div>
     <div class="container p-5 my-5" style="text-align: center;">
         <h1 style="color: 1c00f4;">Website tính giờ giảng thực tế của giảng viên</h1>
-        <div style="padding: 20px;"><b>Họ tên giảng viên hoặc user ID: </b><input type="text"> </div>
-        <div></div>
-        <button style="background-color: #1c00f4;" type="button" class="btn btn-primary"><i class="bi bi-search"></i>
+        <div style="margin-left: 25%;width: 50%;">
+            <select class="form-select" aria-label="Default select example" style="text-align: center;"
+                id="select_HocKy">
+                <% hocky.forEach((option)=> { %>
+                    <option value="<%= option.ID_HK %>">
+                        <%= option.MaHK %> - <%= option.TenHocKy %> - <%= option.NamHoc %>
+                    </option>
+                    <% }); %>
+            </select>
+        </div>
+        <div style="padding: 20px;"><b>Họ tên giảng viên hoặc user ID: </b><input type="text" placeholder="Nguyễn Văn A"
+                id="hotengv"> </div>
+        <button style="background-color: #1c00f4;" type="button" class="btn btn-primary" id="btn_kt"
+            onclick="search_in_homepage()"><i class="bi bi-search"></i>
             Check</button>
+        <div id="note" class="container p-12 my-3"></div>
+        <div id="table-container" class="container p-12 my-5" style="margin: 8px;">
+
+        </div>
+
     </div>
 </body>
-<footer class="text-center text-white" style="background-color: #1c00f4;margin-top: 100%;">
-
-    <div class="container p-3 pb-0">
-        <section class="">
-            <p class="d-flex justify-content-center align-items-center">
-                <span class="me-2">Đăng ký ngay</span>
-                <button data-mdb-ripple-init type="button" class="btn btn-outline-light btn-rounded">
-                    Đăng ký
-                </button>
-            </p>
-        </section>
-        <div class="text-center p-2">
-            © 2024 Copyright:
-            <a class="text-white" href="#link">Đồ án CNTT1</a>
+<script src="/script/homepage_script.js"></script>
+<footer class="text-center">
+    <div style="text-align: center;">
+        <div style="padding: 10px;">
+            <b>Đăng ký ngay </b>
+            <button type="button" class="btn btn-outline-dark btn-rounded">
+                Sign up!
+            </button>
         </div>
+        <div>© 2024 Copyright: <a href="#33" style="text-decoration: none;">Đồ án 1 khoa Công Nghệ Thông Tin Đại Học Sư
+                Phạm Kỹ Thuật Vĩnh Long</a>
+        </div>
+    </div>
 </footer>
 
 </html>

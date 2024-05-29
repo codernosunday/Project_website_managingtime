@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* Đảm bảo chiều cao tối thiểu là 100% chiều cao của viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    /* Giãn toàn bộ nội dung của main để footer nằm ở dưới cùng */
+}
+
+footer {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}

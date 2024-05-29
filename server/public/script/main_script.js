@@ -37,7 +37,6 @@ rowsArray.forEach(row => {
 //form giang vien
 //checkbox
 document.getElementById("enableForm").addEventListener("change", function () {
-
     btn.disabled = !this.checked;
     var hoten = document.getElementById("htgv");
     var chuyen_nganh = document.getElementById("chnganh");
@@ -49,4 +48,5 @@ document.getElementById("enableForm").addEventListener("change", function () {
     email_gv.readOnly = !this.checked;
     btn_delete.disabled = !this.checked;
 });
+
 

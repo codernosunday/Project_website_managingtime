@@ -103,7 +103,6 @@ function addData_lichgiangday() {
         };
         data.push(rowData);
     }
-    alert(tableRows.length);
     // Gửi dữ liệu lên máy chủ bằng AJAX
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/exeltool/insertlichgiangday', true);
@@ -119,3 +118,4 @@ function addData_lichgiangday() {
     };
     xhr.send(JSON.stringify(data));
 }
+

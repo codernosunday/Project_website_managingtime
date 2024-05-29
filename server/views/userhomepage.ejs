@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 </head>
 
 <body>
@@ -24,50 +25,79 @@
         </a>
     </div>
     <div class="row">
-        <div class="col-sm-6 p-3 text-white">
-            <table class="table_css">
-                <tr>
-                    <th>Tên giảng viên</th>
-                    <th>Lớp HP</th>
-                    <th>Tên lớp HP</th>
-                    <th>Sỉ số</th>
-                    <th>Số tiết/tuần</th>
-                </tr>
-                <tr>
-                    <td>Võ Thanh Tín</td>
-                    <td>Demo01</td>
-                    <td>2011_demo_(BT)_01</td>
-                    <td>69</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Võ Thanh Tín 2</td>
-                    <td>Demo02</td>
-                    <td>2011_demo_(BT)_02</td>
-                    <td>59</td>
-                    <td>2</td>
-                </tr>
-            </table>
-        </div>
+        <div class="col-sm-6 p-3">
+            <div style="margin: 5px;">
+                <div class="row">
+                    <div class="col-sm-2 p-2">
+                        <b>Chọn học kỳ:</b>
+                    </div>
+                    <div class="col-sm-10 p-2">
+                        <select class="form-select" aria-label="Default select example" style="text-align: center;"
+                            id="select_HocKy">
+                            <% hocky.forEach((option)=> { %>
+                                <option value="<%= option.ID_HK %>">
+                                    <%= option.MaHK %> - <%= option.TenHocKy %> - <%= option.NamHoc %>
+                                </option>
+                                <% }); %>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 p-2">
+                    <div id="note" style="text-align: center; opacity:30%;margin-bottom: 0;"></div>
+                    <div id="table-container" style="overflow: auto;height: 400px;">
 
-        <div class="col-sm-4 p-4  text-black">
-            <form action="/action_page.php">
-                <fieldset>
-                    <legend>Personalia:</legend>
-                    <label for="fname">First name:</label>
-                    <input type="text" id="fname" name="fname"><br><br>
-                    <label for="lname">Last name:</label>
-                    <input type="text" id="lname" name="lname"><br><br>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email"><br><br>
-                    <label for="birthday">Birthday:</label>
-                    <input type="date" id="birthday" name="birthday"><br><br>
-                    <input type="submit" value="Submit">
-                </fieldset>
-            </form>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-rounded" onclick="exportToExcel()"><i
+                    class="bi bi-file-earmark-arrow-down"></i> Xuất
+                file exel</button>
         </div>
-    </div>
+        <div class="col-sm-5 p-4 text-dark">
+
+            <div class="form_data">
+                <div class="row">
+                    <div class="col-sm-12 p-1 text-white">
+                        <h3 style="background-color: #1c00f4; padding: 5px;"><i class="bi bi-pencil-square"></i> Form
+                            chỉnh sửa</h3>
+                    </div>
+                    <div class="col-sm-5 p-1">
+                        <input id="tenGiangvien" placeholder="Họ và giảng viên">
+                    </div>
+                    <div class="col-sm-7 p-1">
+                        <b>Tổng thời giang giảng dạy:</b>
+                    </div>
+                    <div class="col-sm-4 p-1">
+                        <input id="tenHP" placeholder="Tên học phần">
+                    </div>
+                    <div class="col-sm-4 p-1">
+                        <input id="tenlopHP" placeholder="Tên lớp học phần">
+                    </div>
+                    <div class="col-sm-4 p-1">
+                        <input id="Siso" placeholder="Sỉ số">
+                    </div>
+                    <div class="col-sm-4 p-1"><button type="button" class="btn btn-outline-success btn-rounded"
+                            id="save_btn"><i class="bi bi-save2"></i>
+                            Lưu thông tin
+                        </button>
+                    </div>
+                    <div class="col-sm-4 p-1"><button type="button" class="btn btn-outline-danger btn-rounded"
+                            id="del_btn"><i class="bi bi-trash"></i>
+                            Xoá thông tin
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-check form-switch">
+                <label for="enableForm">Chế độ chỉnh sửa</label>
+                <input type="checkbox" class="form-check-input" role="switch" id="form_enable">
+            </div>
+        </div>
 </body>
 <script src="/script/navbar_script.js"></script>
+<script src="/script/userhomepage.js"></script>
 
 </html>
